@@ -1,0 +1,20 @@
+     1  #include <stdio.h>
+     2  
+     3  int main() {
+     4    int N;
+     5    scanf("%d", &N);
+     6    for (int n = 1; n <= N; n++) {
+     7      int cnt = 0;
+     8      for (int i = 1; i <= 100; i++) {
+     9        for (int j = i; j <= 100; j++) {
+    10          for (int k = j; k <= 100; k++) {
+    11            if (i * (i + j + k) + j * (j + k) + k * k == n) {
+    12              cnt++;
+    13            }
+    14          }
+    15        }
+    16      }
+    17      printf("%d\n", cnt);
+    18    }
+    19    return 0;
+    20  }

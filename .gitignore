@@ -1,0 +1,7 @@
+.vs
+.vscode
+test/
+*.in
+*.out
+*.exe
+contest.acc.json

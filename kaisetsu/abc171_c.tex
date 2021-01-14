@@ -1,0 +1,41 @@
+\documentclass[11pt, dvipdfmx]{jarticle}
+\usepackage{amsmath, amssymb}
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm, includefoot, dvipdfmx]{geometry}
+\usepackage{ascmac}
+\usepackage{verbatim}
+
+\title{ABC171:C のフランクな解説}
+\author{終に鮭}
+
+\begin{document}
+
+\maketitle
+
+\section*{TL;DR}
+
+\begin{itemize}
+	\item 26進数の問題
+	\item 長さ固定ではないので、より少ない桁でも表現できる文は切り捨てる
+\end{itemize}
+
+\section*{略解}
+
+とりあえず名前の長さ $L$ を拾ってこようね。
+具体的には、
+\[
+	\begin{array}{rrcccl}
+		L=1;& 0 & \leq & N-1 & < & 26 \\
+		L=2;& 26 & \leq & N-1 & < & 26 + 26^2 \\
+		L=3;& 26 + 26 ^ 2 & \leq & N-1 & < & 26 + 26^2 + 26^3 \\
+		&&& \vdots &&
+	\end{array}
+\]
+になるから、とりあえず \verb|N--;| して、
+\begin{verbatim}
+while (N >= 26 ** (++L)) { N -= 26 ** L; }
+\end{verbatim}
+みたいなことをするといいぞ（$L$ は 0 で初期化）。
+
+1 と $\sum 26^n$ は引いて $N=0$: \verb|"aa...aa"| の対応ができているので、あとは $N$ を26進数に直すだけだ。先頭 'a' 埋めを忘れないように！（私は \verb|std::vector<char>(L, 'a')| を後から一文字づつ置き換える形にしました）
+
+\end{document}

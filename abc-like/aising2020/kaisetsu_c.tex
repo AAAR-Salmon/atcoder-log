@@ -1,0 +1,60 @@
+\documentclass[11pt, dvipdfmx]{jarticle}
+\usepackage{amsmath, amssymb}
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm, includefoot, dvipdfmx]{geometry}
+\usepackage{ascmac}
+\usepackage{verbatim}
+
+\newcommand*{\set}[1]{\{#1\}}
+
+\title{エイシング プログラミング コンテスト 2020:C のフランクな解説}
+\author{終に鮭}
+
+\begin{document}
+
+\maketitle
+
+\section*{TL;DR}
+
+\begin{itemize}
+	\item 単純に for と if でカウントするだけ
+	\item 普通に全探索するともちろんTLEだが，ちょっと枝刈りすれば耐える
+\end{itemize}
+
+\section*{略解}
+
+適当に全探索で組んでみよう．
+\begin{verbatim}
+     1  #include <stdio.h>
+     2
+     3  int main() {
+     4    int N;
+     5    scanf("%d", &N);
+     6    for (int n = 1; n <= N; n++) {
+     7      int cnt = 0;
+     8      for (int i = 1; i <= 100; i++) {
+     9        for (int j = 1; j <= 100; j++) {
+    10          for (int k = 1; k <= 100; k++) {
+    11            if (i * i + j * j + k * k + i * j + j * k + j * i == n) {
+    12              cnt++;
+    13            }
+    14          }
+    15        }
+    16      }
+    17      printf("%d\n", cnt);
+    18    }
+    19    return 0;
+    20  }
+\end{verbatim}
+
+これでは当然 TLE してしまう．ではどうすればいいか？
+
+まず 8, 9 行目のあとに $i^2>n$, $i^2+j^2+ij>n$ ならループを抜けるように付け加えてみよう(ループが重たいので真面目に$i(i+2)+3$, $i(i+j+1)+j(j+1)+1$ で判定したほうが早くなるかも)．
+
+しかしこれでもまだ TLE．そこで $i \leq j \leq k$ になるようにすれば組み合わせはかなり減る．具体的には(枝刈りしていない状態で) $100^3$ から ${}_{100}\mathrm{C}_{3}$ に減る．つまり約 1/6 倍まで減らせるぞ！
+
+このとき \verb|cnt| のインクリメントに注意！並べ替えを考慮していないので，$\#\set{i,j,k}=1$ なら 1，$\#\set{i,j,k}=2$ なら 3，$\#\set{i,j,k}=3$ なら 6 だけ増やすように場合分けしよう．$i \leq j \leq k$ から，$\#\set{i,j,k}=2 \Longrightarrow i < k$ であることをうまく利用しよう．
+
+\subsection*{追記}
+早い提出結果を眺めてみると，for文の条件に \verb|i * (i + j + k) + j * (j + k) + k <= n| が書いてあった．すげーかしこいとおもいました．
+
+\end{document}

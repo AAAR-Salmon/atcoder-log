@@ -7,7 +7,7 @@ moves=[[0] * C for _ in range(R)]
 q=deque([(y,x)])
 while len(q) > 0:
 	(y,x) = q.popleft()
-	for (j,i) in {(y,x+1), (y,x-1), (y+1,x), (y-1,x)}:
+	for (j,i) in [(y,x+1), (y,x-1), (y+1,x), (y-1,x)]:
 		if (j,i) < (0,0) or (R,C) <= (j,i):
 			continue
 		if moves[j][i] > 0:

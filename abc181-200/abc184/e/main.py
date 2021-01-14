@@ -21,7 +21,7 @@ while q:
 				visited[i][j] = visited[x][y] + 1
 				q.append((i,j))
 		telep[ord(grid[x][y]) - 97].clear()
-	for (i,j) in {(x+1,y), (x,y+1), (x-1,y), (x,y-1)}:
+	for (i,j) in [(x+1,y), (x,y+1), (x-1,y), (x,y-1)]:
 		if not (0 <= i < H and 0 <= j < W) or grid[i][j] == '#':
 			continue
 		if grid[i][j] == 'G':

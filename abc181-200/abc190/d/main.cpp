@@ -8,7 +8,7 @@ int main() {
 	cin >> N;
 
 	vector<ll> d;
-	for (ll i = 1; i * (i + 1) <= 4 * N; i++) {
+	for (ll i = 1; i * (i + 1) <= 2 * N; i++) {
 		if (2 * N % i == 0) {
 			d.push_back(i);
 		}

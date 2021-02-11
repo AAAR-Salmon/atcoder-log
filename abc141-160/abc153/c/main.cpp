@@ -1,17 +1,21 @@
-#include <stdio.h>
+#include <iostream>
 #include <algorithm>
-#define rep(i,r) for (int i = 0; i < r; i++)
 
 using namespace std;
+using ll = long long;
+ll H[200000];
 
 int main() {
 	int N, K;
-	scanf("%d%d", &N, &K);
-	int H[N];
-	rep(i, N) scanf("%d", &H[i]);
+	cin >> N >> K;
+	for (int i = 0; i < N; i++) {
+		cin >> H[i];
+	}
 	sort(H, H + N);
-	long D = 0;
-	rep(i, N - K) D += H[i];
-	printf("%ld", D);
+	ll D = 0;
+	for (int i = 0; i < N - K; i++) {
+		D += H[i];
+	}
+	cout << D << "\n";
 	return 0;
 }

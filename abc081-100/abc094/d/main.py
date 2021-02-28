@@ -1,0 +1,5 @@
+n = int(input())
+a = sorted(map(int,input().split()))
+ans = a.pop()
+a.sort(key=lambda x: abs(x * 2 - ans))
+print(ans, a[0])

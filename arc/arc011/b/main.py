@@ -1,0 +1,20 @@
+from re import IGNORECASE, sub
+
+N = int(input())
+W = input()
+W = sub(r'[^ bcdwtjfqlvsxpmhkngzr]', '', W, flags=IGNORECASE)
+W = sub(r'[bc]', '1', W, flags=IGNORECASE)
+W = sub(r'[dw]', '2', W, flags=IGNORECASE)
+W = sub(r'[tj]', '3', W, flags=IGNORECASE)
+W = sub(r'[fq]', '4', W, flags=IGNORECASE)
+W = sub(r'[lv]', '5', W, flags=IGNORECASE)
+W = sub(r'[sx]', '6', W, flags=IGNORECASE)
+W = sub(r'[pm]', '7', W, flags=IGNORECASE)
+W = sub(r'[hk]', '8', W, flags=IGNORECASE)
+W = sub(r'[ng]', '9', W, flags=IGNORECASE)
+W = sub(r'[zr]', '0', W, flags=IGNORECASE)
+W = sub(r'^\s+', '', W, flags=IGNORECASE)
+W = sub(r'\s+$', '', W, flags=IGNORECASE)
+W = sub(r'\s{2,}', ' ', W, flags=IGNORECASE)
+
+print(W)

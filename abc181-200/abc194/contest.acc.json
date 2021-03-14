@@ -25,7 +25,12 @@
       "id": "abc194_c",
       "label": "C",
       "title": "Squared Error",
-      "url": "https://atcoder.jp/contests/abc194/tasks/abc194_c"
+      "url": "https://atcoder.jp/contests/abc194/tasks/abc194_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "main.py"
+      }
     },
     {
       "id": "abc194_d",

@@ -1,12 +1,17 @@
 N = int(input())
 S = list(map(int,input()))
 X = input()
-T = 0
+AokiWin = [[True] * 7 for _ in range(N+1)]
+AokiWin[N][0] = False
+
+p10 = 1
 for i in range(N):
-	if X[-i-1] == 'A':
-		if T == 0:
-			T = (T + S[-i-1] * pow(10, S[-i-1], 7)) % 7
+	if X[-1-i] == 'A':
+		for j in range(7):
+			AokiWin[-2-i][j] = AokiWin[-1-i][(j + S[-1-i] * p10) % 7] or AokiWin[-1-i][j]
 	else:
-		if (T + S[-i-1] * pow(10, S[-i-1], 7)) % 7 == 0:
-			T = (T + S[-i-1] * pow(10, S[-i-1], 7)) % 7
-print('Takahashi' if T == 0 else 'Aoki')
+		for j in range(7):
+			AokiWin[-2-i][j] = AokiWin[-1-i][(j + S[-1-i] * p10) % 7] and AokiWin[-1-i][j]
+	p10 = p10 * 10 % 7
+
+print('Aoki' if AokiWin[0][0] else 'Takahashi')

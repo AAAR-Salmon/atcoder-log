@@ -47,7 +47,12 @@
       "id": "abc194_e",
       "label": "E",
       "title": "Mex Min",
-      "url": "https://atcoder.jp/contests/abc194/tasks/abc194_e"
+      "url": "https://atcoder.jp/contests/abc194/tasks/abc194_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "main.py"
+      }
     },
     {
       "id": "abc194_f",

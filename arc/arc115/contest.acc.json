@@ -26,7 +26,12 @@
       "id": "arc115_c",
       "label": "C",
       "title": "ℕ Coloring",
-      "url": "https://atcoder.jp/contests/arc115/tasks/arc115_c"
+      "url": "https://atcoder.jp/contests/arc115/tasks/arc115_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "main.py"
+      }
     },
     {
       "id": "arc115_d",

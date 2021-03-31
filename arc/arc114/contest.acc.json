@@ -20,7 +20,12 @@
       "id": "arc114_b",
       "label": "B",
       "title": "Special Subsets",
-      "url": "https://atcoder.jp/contests/arc114/tasks/arc114_b"
+      "url": "https://atcoder.jp/contests/arc114/tasks/arc114_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "main.py"
+      }
     },
     {
       "id": "arc114_c",

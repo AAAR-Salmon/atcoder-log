@@ -10,14 +10,13 @@ for i in range(M):
 INF = 10**15
 dp = [INF] * (N+1)
 dp[X] = 0
-hq = [(0, X)]
+hq = [X]
 while hq:
-	cur_time, cur = heappop(hq)
-	if dp[cur] < cur_time:
-		continue
+	cur = heappop(hq)
+	cur_time = dp[cur]
 	for next, T, K in adj[cur]:
 		ariv_time = (cur_time + K - 1) // K * K + T
 		if ariv_time < dp[next]:
 			dp[next] = ariv_time
-			heappush(hq, (ariv_time, next))
+			heappush(hq, next)
 print(dp[Y] if dp[Y] < INF else -1)

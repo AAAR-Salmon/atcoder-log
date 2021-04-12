@@ -12,6 +12,7 @@
       "url": "https://atcoder.jp/contests/abc194/tasks/abc194_a",
       "directory": {
         "path": "a",
+        "testdir": "test",
         "submit": "main.py"
       }
     },

@@ -1,8 +1,8 @@
-import math
-
-
 R,X,Y = map(int,input().split())
-ans2 = (X ** 2 + Y ** 2) / R ** 2
+if X ** 2 + Y ** 2 < R ** 2:
+	print(2)
+	exit(0)
+ans2 = (X ** 2 + Y ** 2 + R ** 2 - 1) // R ** 2
 l = -1
 r = 1_000_000
 while r - l > 1:
@@ -11,4 +11,4 @@ while r - l > 1:
 		r = m
 	else:
 		l = m
-print(math.ceil(math.sqrt(ans2)))
+print(r)

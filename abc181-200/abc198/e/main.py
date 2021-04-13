@@ -1,6 +1,6 @@
-from collections import deque
+from sys import setrecursionlimit
+setrecursionlimit(1000000)
 from itertools import chain
-from copy import copy
 
 N = int(input())
 C = list(chain([0], map(int,input().split())))
@@ -10,25 +10,23 @@ for _ in range(N - 1):
 	edge[A].append(B)
 	edge[B].append(A)
 
-good = [False] * (N + 1)
-good[1] = True
-path_from_1 = set([C[1]])
-s = deque([1])
-sorted_nodes = []
+count_colors = [0] * 100001
+is_vertex_good = [False] * (N+1)
+done = [False] * (N+1)
 
-while s:
-	n = s.pop()
-	sorted_nodes.append(n)
-	for c in edge[n]:
-		s.append(c)
+def dfs(fr):
+	if done[fr]:
+		return
+	done[fr] = True
+	for to in edge[fr]:
+		color = C[to]
+		if count_colors[color] == 0:
+			is_vertex_good[to] = True
+		count_colors[color] += 1
+		dfs(to)
+		count_colors[color] -= 1
 
-while s:
-	n = s.pop()
-	for x in edge[n]:
-		if done[x] != None:
-			continue
-		if not C[x] in path_from_1:
-			path_from_1.add(C[x])
-			good[x] = True
-		s.append(x)
-print(*(i for i in range(N + 1) if good[i]), sep='\n')
+is_vertex_good[1] = True
+count_colors[C[1]] += 1
+dfs(1)
+print(*(i for i, v in enumerate(is_vertex_good) if v), sep='\n')

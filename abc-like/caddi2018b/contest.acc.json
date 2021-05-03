@@ -32,7 +32,8 @@
       "url": "https://atcoder.jp/contests/caddi2018b/tasks/caddi2018_a",
       "directory": {
         "path": "c",
-        "testdir": "test"
+        "testdir": "test",
+        "submit": "main.py"
       }
     },
     {

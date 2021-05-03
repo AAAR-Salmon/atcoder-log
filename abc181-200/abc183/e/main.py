@@ -2,9 +2,8 @@ MOD = 1_000_000_007
 
 H, W = map(int, input().split())
 grid = [input() for _ in range(H)]
-dp = [[0] * (W + 1) for _ in range(H + 1)]
+dp, dp1, dp2, dp3 = (tuple([0] * (W + 1) for _ in range(H + 1)) for _ in range(4))
 dp[1][1] = 1
-dp1, dp2, dp3 = ([[0] * (W + 1) for _ in range(H + 1)] for _ in range(3))
 for i in range(1, H + 1):
 	for j in range(1, W + 1):
 		if grid[i - 1][j - 1] == '#':

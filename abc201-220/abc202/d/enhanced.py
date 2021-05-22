@@ -3,22 +3,20 @@ A, B, K = map(int, input().split())
 def comb(n, r):
 	res = 1
 	for i in range(r):
-		res = res * (n - r) // (r + 1)
+		res = res * (n - i) // (i + 1)
+	return res
 
-a = A
-b = B
-K -= 1
+l = 0
+r = comb(A + B, A)
 ans = ''
-i = 0
-while a + b > 0:
-	c = comb(a + b - 1)(a - 1)
-	if b > 0 and c <= K:
-		ans[i] = 98
-		K -= c
-		b -= 1
+while r - l > 1:
+	m = l + comb(A + B - 1, A - 1)
+	if m < K:
+		l = m
 		ans += 'b'
+		B -= 1
 	else:
-		a -= 1
+		r = m
 		ans += 'a'
-	i += 1
-print(ans)
+		A -= 1
+print(ans + 'a' * A + 'b' * B)

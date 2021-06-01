@@ -40,7 +40,12 @@
       "id": "abc119_d",
       "label": "D",
       "title": "Lazy Faith",
-      "url": "https://atcoder.jp/contests/abc119/tasks/abc119_d"
+      "url": "https://atcoder.jp/contests/abc119/tasks/abc119_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "main.py"
+      }
     }
   ]
 }

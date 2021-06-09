@@ -21,7 +21,12 @@
       "id": "abc013_3",
       "label": "C",
       "title": "節制",
-      "url": "https://atcoder.jp/contests/abc013/tasks/abc013_3"
+      "url": "https://atcoder.jp/contests/abc013/tasks/abc013_3",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "main.py"
+      }
     },
     {
       "id": "abc013_4",

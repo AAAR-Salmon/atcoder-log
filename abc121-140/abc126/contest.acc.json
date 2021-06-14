@@ -45,7 +45,12 @@
       "id": "abc126_e",
       "label": "E",
       "title": "1 or 2",
-      "url": "https://atcoder.jp/contests/abc126/tasks/abc126_e"
+      "url": "https://atcoder.jp/contests/abc126/tasks/abc126_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
     },
     {
       "id": "abc126_f",

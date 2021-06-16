@@ -57,7 +57,7 @@
       "directory": {
         "path": "e",
         "testdir": "test",
-        "submit": "main.py"
+        "submit": "main.cpp"
       }
     },
     {

@@ -59,7 +59,12 @@
       "id": "abc146_f",
       "label": "F",
       "title": "Sugoroku",
-      "url": "https://atcoder.jp/contests/abc146/tasks/abc146_f"
+      "url": "https://atcoder.jp/contests/abc146/tasks/abc146_f",
+      "directory": {
+        "path": "f",
+        "testdir": "test",
+        "submit": "main.py"
+      }
     }
   ]
 }

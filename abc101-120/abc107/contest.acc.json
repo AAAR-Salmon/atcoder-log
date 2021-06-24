@@ -20,13 +20,23 @@
       "id": "abc107_b",
       "label": "B",
       "title": "Grid Compression",
-      "url": "https://atcoder.jp/contests/abc107/tasks/abc107_b"
+      "url": "https://atcoder.jp/contests/abc107/tasks/abc107_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "main.py"
+      }
     },
     {
       "id": "arc101_a",
       "label": "C",
       "title": "Candles",
-      "url": "https://atcoder.jp/contests/abc107/tasks/arc101_a"
+      "url": "https://atcoder.jp/contests/abc107/tasks/arc101_a",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "main.py"
+      }
     },
     {
       "id": "arc101_b",
